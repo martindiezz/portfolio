@@ -1,59 +1,82 @@
-/* General body settings */
+/* Basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: 'Gilroy', sans-serif;
-    background-color: #000; /* Set the background to black */
-    color: #fff; /* Set text color to white */
-    overflow: hidden; /* Hide body scroll */
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
-/* Header settings for the name and portfolio title */
-.header {
+.content-wrapper {
     text-align: center;
-    padding: 20px;
-    background-color: #000; /* Black background for the header */
-    color: #fff; /* White text */
-    position: fixed;
-    top: 0;
     width: 100%;
-    z-index: 10;
+    position: relative;
 }
 
-.header h1, .header h2 {
-    margin: 0;
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
 }
 
-.header h1 {
-    font-size: 2.5rem;
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
-.header h2 {
-    font-size: 1.5rem;
-    font-weight: 300;
-}
-
-/* Container to hold videos */
-.video-container {
+/* Styling for the video gallery */
+.video-gallery {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    overflow-y: scroll;
-    scrollbar-width: none; /* Firefox hides scrollbar */
-    padding-top: 80px; /* Space for header */
-    background-color: black; /* Black background for the whole container */
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    padding: 20px 0;
 }
 
-/* Hide scrollbar in Webkit browsers */
-.video-container::-webkit-scrollbar {
-    display: none;
+video {
+    width: 720px;
+    height: 1080px;
+    object-fit: cover;
+    border: none;
 }
 
-/* Video styling */
-.autoplay-video {
-    width: 100%;        /* Video takes up the full width */
-    height: 100vh;      /* Video takes up the full viewport height */
-    object-fit: cover;  /* Ensures the video scales properly */
-    display: block;
-    margin: 0 auto;     /* Center the video */
-    background-color: black;
+/* Hide controls for videos */
+video::-webkit-media-controls {
+    display: none !important;
+}
+video::controls {
+    display: none !important;
+}
+video {
+    pointer-events: none;
+}
+
+/* Elastic scroll effect */
+html {
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    scroll-snap-align: start;
+}
+
+/* Elastic scroll effect with smooth bounce */
+html {
+    overscroll-behavior: contain;
+    scroll-padding-top: 10px;
+    scroll-behavior: smooth;
+}
+
+body {
+    overscroll-behavior: none;
 }
