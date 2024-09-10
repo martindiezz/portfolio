@@ -1,0 +1,59 @@
+/* General body settings */
+body {
+    margin: 0;
+    font-family: 'Gilroy', sans-serif;
+    background-color: #000; /* Set the background to black */
+    color: #fff; /* Set text color to white */
+    overflow: hidden; /* Hide body scroll */
+}
+
+/* Header settings for the name and portfolio title */
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #000; /* Black background for the header */
+    color: #fff; /* White text */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+.header h1, .header h2 {
+    margin: 0;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+}
+
+.header h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+/* Container to hold videos */
+.video-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox hides scrollbar */
+    padding-top: 80px; /* Space for header */
+    background-color: black; /* Black background for the whole container */
+}
+
+/* Hide scrollbar in Webkit browsers */
+.video-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Video styling */
+.autoplay-video {
+    width: 100%;        /* Video takes up the full width */
+    height: 100vh;      /* Video takes up the full viewport height */
+    object-fit: cover;  /* Ensures the video scales properly */
+    display: block;
+    margin: 0 auto;     /* Center the video */
+    background-color: black;
+}
