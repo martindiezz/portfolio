@@ -1,0 +1,82 @@
+/* Basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.content-wrapper {
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Styling for the video gallery */
+.video-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    padding: 20px 0;
+}
+
+video {
+    width: 720px;
+    height: 1080px;
+    object-fit: cover;
+    border: none;
+}
+
+/* Hide controls for videos */
+video::-webkit-media-controls {
+    display: none !important;
+}
+video::controls {
+    display: none !important;
+}
+video {
+    pointer-events: none;
+}
+
+/* Elastic scroll effect */
+html {
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    scroll-snap-align: start;
+}
+
+/* Elastic scroll effect with smooth bounce */
+html {
+    overscroll-behavior: contain;
+    scroll-padding-top: 10px;
+    scroll-behavior: smooth;
+}
+
+body {
+    overscroll-behavior: none;
+}
